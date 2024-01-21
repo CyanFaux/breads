@@ -8,20 +8,20 @@ function Index ({breads})  {
         {/* <p>I have {breads[0].name} bread!</p> */}
         {/* This is a JSX comment. */}
         <ul>
-            {
-            breads.map((bread, index)=> {
-                return (
-                <li key={index}>
-                {bread.name}
-                </li>
-                        )
-                    })
-                }
+        {
+  breads.map((bread, index)=> {
+    return (
+      <li key={index}>
+        <a href={`/breads/${index}`}>
+          {bread.name}
+        </a>
+      </li>
+    )
+  })
+}
+
         </ul>
-</Default>
-
-
-
+    </Default>
     )
 }
 
