@@ -8,9 +8,20 @@ breads.get('/:arrayIndex', (req, res) => {
     res.render('Show', {
       bread:Bread[req.params.arrayIndex]
     })
+  }/*  else {
+    res.render('error404')
+  } */
+})
+
+// CREATE
+breads.post('/', (req, res) => {
+  if(req.body.hasGluten === 'on') {
+    req.body.hasGluten = 'true'
   } else {
-    res.send('404')
+    req.body.hasGluten = 'false'
   }
+  Bread.push(req.body)
+  res.send(Bread)
 })
 
 

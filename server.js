@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   
   // 404 Page
   app.get('*', (req, res) => {
-  res.send('404')
+      res.status(404).render('error404')
   })
 
 // LISTEN
